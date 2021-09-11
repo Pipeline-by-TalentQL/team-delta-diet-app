@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"useDefineForClassFields": true,
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": false,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"types": [
+			"jest",
+			"react",
+			"react-dom",
+			"styled-components",
+			"cypress",
+			"@testing-library/react",
+			"@testing-library/cypress"
+		]
+	},
+	"include": ["src"],
+	"exclude": ["node_modules/**/*.(js|ts|tsx)", "vite-env.d.ts"],
+	"typeRoots": ["node_modules/@types"]
+}
