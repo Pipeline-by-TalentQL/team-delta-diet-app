@@ -1,3 +1,3 @@
 test('Test title', () => {});
 
-export { };
+export {};

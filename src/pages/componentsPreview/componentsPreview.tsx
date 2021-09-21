@@ -1,5 +1,6 @@
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import CustomButton from '../../components/global/button/button';
+import CustomButton from '../../components/global/button/customButton';
 
 const ComponentsPreview = () => {
 	return (

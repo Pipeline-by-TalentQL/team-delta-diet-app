@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 import classNames from 'classnames/bind';
 import { Button } from 'react-bootstrap';
 import styles from './button.module.css';
