@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import classNames from 'classnames/bind';
 import { Button } from 'react-bootstrap';
-import styles from './button.module.css';
+import styles from './customButton.module.css';
 
 type CustomButtonProps = PropsWithChildren<{
 	size?: 'sm' | 'lg';
