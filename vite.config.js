@@ -9,7 +9,7 @@ export default defineConfig({
 		port: 7779,
 	},
 	esbuild: {
-		jsx: 'preserve',
+		jsx: 'transform',
 		jsxFactory: '_jsx',
 		jsxFragment: '_jsxFragment',
 		jsxInject: `import { createElement as _jsx, Fragment as _jsxFragment } from 'react'`,

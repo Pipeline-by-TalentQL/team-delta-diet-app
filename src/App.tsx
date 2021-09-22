@@ -1,12 +1,21 @@
-import React from 'react';
-import './App.css';
+import React, { Fragment, lazy, Suspense } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import './assets/app.scss';
+import ErrorBoundary from './components/errors/errorBoundary/errorBoundary';
+const ComponentsPreview = lazy(
+	() => import('./pages/componentsPreview/componentsPreview'),
+);
 
-function App() {
-	return (
-		<div className="App">
-			<h1>Diet App</h1>
-		</div>
-	);
-}
+const App = () => (
+	<Fragment>
+		<Switch>
+			<ErrorBoundary>
+				<Suspense fallback={<div>Loading...</div>}>
+					<Route exact component={ComponentsPreview} path="/components"></Route>
+				</Suspense>
+			</ErrorBoundary>
+		</Switch>
+	</Fragment>
+);
 
 export default App;
