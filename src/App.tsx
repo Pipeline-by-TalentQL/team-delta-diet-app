@@ -1,6 +1,7 @@
 import React, { Fragment, lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './assets/scss/app.scss';
+
 import ErrorBoundary from './components/errors/errorBoundary/errorBoundary';
 const ComponentsPreview = lazy(
 	() => import('./pages/componentsPreview/componentsPreview'),
