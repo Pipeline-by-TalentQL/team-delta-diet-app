@@ -1,8 +1,14 @@
 .footer {
+  max-width: 800px;
+  margin: auto;
 
-  h3 {
+  h2 {
     font-weight: 600;
     font-size: 28px;
     margin: 0;
+  }
+
+  svg {
+    fill: rgba(32, 142, 233, 0.733);
   }
 }
