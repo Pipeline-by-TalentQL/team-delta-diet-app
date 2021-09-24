@@ -1,22 +1,22 @@
 import React from 'react';
 import CustomButton from '../global/customButton/customButton';
-import styles from './navbar.module.css';
+import styles from './navbar.module.scss';
 
 const Navbar = () => {
 	return (
 		<div className={styles.navbar}>
-			<h3>Logo</h3>
+			<h3>LOGO</h3>
 			<div className={styles.navbar__links}>
-				<a href="" className="navbar__link">
+				<a href="" className={styles.navbar__link}>
 					Home
 				</a>
-				<a href="" className="navbar__link">
+				<a href="" className={styles.navbar__link}>
 					About
 				</a>
-				<a href="" className="navbar__link">
+				<a href="" className={styles.navbar__link}>
 					FAQ
 				</a>
-				<a href="" className="navbar__link">
+				<a href="" className={styles.navbar__link}>
 					Contacts
 				</a>
 			</div>
