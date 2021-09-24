@@ -1,6 +1,6 @@
 import React, { Fragment, lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import './assets/app.scss';
+import './assets/scss/app.scss';
 import ErrorBoundary from './components/errors/errorBoundary/errorBoundary';
 import Footer from './components/footer/footer';
 import Navbar from './components/navbar/navbar';
