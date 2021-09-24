@@ -1,0 +1,22 @@
+.text {
+	font-size: 1rem;
+
+	&-sm {
+		font-size: 0.8rem;
+	}
+
+	&-md {
+		font-size: 1.4rem;
+
+		&-2 {
+			font-size: 1.6rem;
+		}
+		&-3 {
+			font-size: 1.8rem;
+		}
+	}
+
+	&-lg {
+		font-size: 4.2rem
+	}
+}
