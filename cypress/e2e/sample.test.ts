@@ -19,7 +19,7 @@ describe('sample app works', () => {
 	});
 
 	it('load the app correctly', () => {
-		user.findByText('LOGO');
+		// user.findByText('LOGO');
 		const logos = user.findAllByText('LOGO');
 		logos.should('equal', 2);
 	});
