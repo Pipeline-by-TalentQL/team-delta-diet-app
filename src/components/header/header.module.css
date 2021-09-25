@@ -1,0 +1,30 @@
+.header {
+	background-image: url('/src/assets/images/landingPage/hero.png');
+	background-size: 100% 100%;
+	height: 77rem;
+}
+
+.headerBox {
+	width: 100%;
+	height: 20rem;
+	margin-top: -10rem;
+	padding: 0rem 3.5rem 0rem 6.5rem;
+	box-shadow: 0rem 0.5rem 3rem rgba(0, 0, 0, 0.15);
+    border-radius: .4rem;
+}
+
+.headerBoxImage {
+	margin-right: 1.6rem;
+}
+
+.headerCol:not(:last-child) {
+	border-right: .05rem solid #C4C4C4;
+}
+
+.headerCol:nth-last-child(-n+2) {
+    padding-left: 3rem;
+}
+
+.header .row {
+	height: 100%;
+}

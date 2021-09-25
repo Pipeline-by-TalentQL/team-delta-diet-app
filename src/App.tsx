@@ -7,6 +7,7 @@ import Navbar from './components/navbar/navbar';
 const ComponentsPreview = lazy(
 	() => import('./pages/componentsPreview/componentsPreview'),
 );
+const LandingPage = lazy(() => import('./pages/landingPage/landingPage'));
 
 const App = () => (
 	<Fragment>
@@ -15,6 +16,7 @@ const App = () => (
 			<ErrorBoundary>
 				<Suspense fallback={<div>Loading...</div>}>
 					<Route exact component={ComponentsPreview} path="/components" />
+					<Route exact component={LandingPage} path="/" />
 				</Suspense>
 			</ErrorBoundary>
 		</Switch>

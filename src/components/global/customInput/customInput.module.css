@@ -1,0 +1,20 @@
+.customInput:focus,
+.customInput:active {
+	border: 0.1rem solid #b20000;
+}
+
+.customInputsm {
+	padding: 1.1rem 0.9rem;
+}
+
+.customInputmd {
+	padding: 1.7rem 1.4rem;
+}
+
+.customInputlg {
+	padding: 2rem 1.6rem;
+}
+
+.borderPrimary {
+    border: .1rem solid #B20000
+}
