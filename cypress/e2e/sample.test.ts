@@ -19,14 +19,19 @@ describe('sample app works', () => {
 	});
 
 	it('load the app correctly', () => {
-		user.findByText(/hello/i);
+		user.findByText(/Logo/i);
 	});
-	it('find counter and click', () => {
-		user
-			.findByText(/count/i)
-			.click()
-			.should('contain', '1')
-			.click()
-			.should('contain', '2');
+	// eslint-disable-next-line jest/no-commented-out-tests
+	// it('find counter and click', () => {
+	// 	user
+	// 		.findByText(/count/i)
+	// 		.click()
+	// 		.should('contain', '1')
+	// 		.click()
+	// 		.should('contain', '2');
+	// });
+
+	it('should see the navbar button', () => {
+		user.findByText('Schedule a Demo');
 	});
 });
