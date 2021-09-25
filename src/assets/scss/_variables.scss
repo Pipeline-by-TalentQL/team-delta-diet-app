@@ -1,0 +1,7 @@
+$primary-font: 'Segoe UI';
+
+:root {
+	--font-segoe: 'Segoe UI';
+	--primary-font: var(--font-segoe);
+	--bs-body-font-family: var(--font-segoe);
+}
