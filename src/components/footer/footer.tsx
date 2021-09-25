@@ -1,10 +1,11 @@
 import React from 'react';
+import CustomButton from '../global/customButton/customButton';
 import styles from './footer.module.scss';
 
 const Footer = () => {
 	return (
 		<footer className={styles.footer}>
-			<div className={styles.footer__top}>
+			<section className={styles.footer__top}>
 				<h2>LOGO</h2>
 				<div className={styles['footer__social-icons']}>
 					<div className={styles['footer__social-icon']}>
@@ -44,7 +45,42 @@ const Footer = () => {
 						</svg>
 					</div>
 				</div>
-			</div>
+			</section>
+
+			<section className={styles.footer__bottom}>
+				<div className={styles.bottom__left}>
+					<h3>Sign up for update</h3>
+					<p>
+						Need more info and want a free chat session with a chef? We would be
+						glad to schedule a one-on-one demo to tell you more on how we work.
+					</p>
+
+					<form>
+						<div>
+							<label htmlFor="email">
+								<input
+									type="email"
+									id="email"
+									name="email"
+									placeholder="Email Address"
+								/>
+							</label>
+						</div>
+
+						<CustomButton type="button" size="lg" variant="primary">
+							Submit
+						</CustomButton>
+					</form>
+				</div>
+				<div className={styles.bottom__center}>
+					<h3>Useful Links</h3>
+					<p>Center</p>
+				</div>
+				<div className={styles.bottom__right}>
+					<h3>Contact us</h3>
+					<p>Right</p>
+				</div>
+			</section>
 		</footer>
 	);
 };

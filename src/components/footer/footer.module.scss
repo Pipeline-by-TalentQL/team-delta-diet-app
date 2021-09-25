@@ -1,5 +1,5 @@
 .footer {
-  max-width: calc(100vh - 400px);
+  max-width: calc(100vw - 400px);
   margin: auto;
 
   .footer__top {
@@ -41,6 +41,42 @@
     }
     svg {
       fill: #0078D4;
+    }
+  }
+
+  .footer__bottom {
+    padding-top: 40px;
+
+    display: flex;
+    gap: 130px;
+
+    h3 {
+      color: #B20000;
+    }
+
+    .bottom__left {
+      p {
+        width: 380px;
+      }
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      input {
+        border: 1px solid #8A8886;
+        box-sizing: border-box;
+        border-radius: 3px;
+        width: 328px;
+        padding: 9px 12px;
+      }
+
+      button {
+        width: 328px;
+      }
     }
   }
 }
