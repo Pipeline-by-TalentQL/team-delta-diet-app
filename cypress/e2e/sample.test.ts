@@ -7,7 +7,7 @@ describe('sample app works', () => {
 	it('load the app correctly', () => {
 		// user.findByText('LOGO');
 		const logos = user.findAllByText('LOGO');
-		cy.wrap(logos).should('have.length', 2);
+		logos.should('have.length', 2);
 	});
 
 	it('should see the navbar button', () => {
