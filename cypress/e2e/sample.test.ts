@@ -19,7 +19,7 @@ describe('sample app works', () => {
 	});
 
 	it('load the app correctly', () => {
-		user.findByText(/LOGO/i);
+		user.findByText('LOGO');
 	});
 	// eslint-disable-next-line jest/no-commented-out-tests
 	// it('find counter and click', () => {
