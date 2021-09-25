@@ -20,6 +20,8 @@ describe('sample app works', () => {
 
 	it('load the app correctly', () => {
 		user.findByText('LOGO');
+		const logos = user.findAllByText('LOGO');
+		logos.should('equal', 2);
 	});
 	// eslint-disable-next-line jest/no-commented-out-tests
 	// it('find counter and click', () => {
