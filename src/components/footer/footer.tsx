@@ -5,6 +5,30 @@ import styles from './footer.module.scss';
 const Footer = () => {
 	return (
 		<footer className={styles.footer}>
+			<section className={styles.footer__img}>
+				<h2>Join our waitlist</h2>
+				<p>Subscribe to be up to date with our latest news and stories</p>
+				<form>
+					<div>
+						<label htmlFor="email">
+							<input
+								type="email"
+								id="email"
+								name="email"
+								placeholder="Enter email address"
+							/>
+						</label>
+					</div>
+
+					<CustomButton type="button" size="lg" variant="secondary">
+						Submit
+					</CustomButton>
+				</form>
+
+				<section>
+					<p>Follow us on</p>
+				</section>
+			</section>
 			<section className={styles.footer__top}>
 				<h2>LOGO</h2>
 				<div className={styles['footer__social-icons']}>
