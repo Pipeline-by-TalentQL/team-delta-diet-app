@@ -223,3 +223,25 @@
     }
   }
 }
+
+
+@media (max-width: 699px) {
+  .footer {
+  
+    .footer__img {
+      form {
+        flex-direction: column;
+
+        input, button {
+          width: 300px;
+        }
+      }
+    }
+
+
+    .footer__bottom {
+      flex-wrap: wrap;
+      gap: 2.5rem
+    }
+  }
+}
