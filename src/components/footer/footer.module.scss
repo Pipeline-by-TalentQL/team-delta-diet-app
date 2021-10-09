@@ -111,8 +111,9 @@
         border: 1px solid #8A8886;
         box-sizing: border-box;
         border-radius: 3px;
-        width: 328px;
         padding: 9px 12px;
+        margin-top: 1rem;
+        width: 328px;
       }
 
       button {
@@ -152,6 +153,7 @@
 
         .channel {
           display: flex;
+          align-items: center;
           gap: 10px;
 
           svg {
