@@ -46,7 +46,7 @@
   }
 
   .footer__top {
-    max-width: calc(100vw - 200px);
+    max-width: calc(100vw - 400px);
     margin: 40px auto;
     display: flex;
     justify-content: space-between;
@@ -89,7 +89,7 @@
   }
 
   .footer__bottom {
-    max-width: calc(100vw - 200px);
+    max-width: calc(100vw - 400px);
     margin: auto;
     padding-top: 40px;
 
@@ -165,6 +165,22 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .footer {
+    .footer__top, .footer__bottom {
+      max-width: calc(100vw - 200px);
+
+      form {
+        input, button {
+          width: 328px;
+        }
+      }
+      .bottom__right {
+        padding-right: 0;
+      }
+    }
+  }
+}
 
 @media (max-width: 768px) {
   .footer {
