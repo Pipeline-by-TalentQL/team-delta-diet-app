@@ -7,7 +7,9 @@ const Footer = () => {
 		<footer className={styles.footer}>
 			<section className={styles.footer__img}>
 				<h2>Join our waitlist</h2>
-				<p>Subscribe to be up to date with our latest news and stories</p>
+				<p>
+					Subscribe to be up to date with our latest <br /> news and stories
+				</p>
 				<form>
 					<div>
 						<label htmlFor="email">
@@ -21,7 +23,7 @@ const Footer = () => {
 					</div>
 
 					<CustomButton type="button" size="lg" variant="secondary">
-						Submit
+						JOIN WAITLIST
 					</CustomButton>
 				</form>
 
@@ -131,25 +133,6 @@ const Footer = () => {
 							<p>+234107283685</p>
 						</div>
 						<div className={styles.channel}>
-							{/* <svg
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth={2}
-									d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-								/>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth={2}
-									d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-								/>
-							</svg> */}
 							<svg
 								width="17"
 								height="19"
@@ -183,7 +166,6 @@ const Footer = () => {
 							</svg>
 							<p>hello@sweetdish.ng</p>
 						</div>
-						<div className="channel" />
 					</div>
 				</div>
 			</section>
