@@ -120,11 +120,6 @@
       }
     }
 
-    .bottom__left {
-      p {
-        width: 380px;
-      }
-    }
     .bottom__center {
       section {
         display: flex;
@@ -175,6 +170,15 @@
   .footer {
     .footer__top, .footer__bottom {
       max-width: calc(100vw - 100px);
+
+      form {
+        input, button {
+          width: 300px;
+        }
+      }
+      .bottom__right {
+        padding-right: 0;
+      }
     }
   }
 }

@@ -72,8 +72,9 @@ const Footer = () => {
 				<div className={styles.bottom__left}>
 					<h3>Sign up for update</h3>
 					<p>
-						Need more info and want a free chat session with a chef? We would be
-						glad to schedule a one-on-one demo to tell you more on how we work.
+						Need more info and want a free chat session with a chef? <br />
+						We would be glad to schedule a one-on-one demo to tell you <br />
+						more on how we work.
 					</p>
 
 					<form>
@@ -149,7 +150,9 @@ const Footer = () => {
 									d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
 								/>
 							</svg>
-							<p>Office address here, probably two lines</p>
+							<p>
+								Office address here, <br /> probably two lines
+							</p>
 						</div>
 						<div className={styles.channel}>
 							<svg
