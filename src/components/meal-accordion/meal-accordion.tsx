@@ -67,7 +67,11 @@ const MealAccordion = () => {
 			</div>
 
 			{/* tab-content */}
-			<TabContent tabs={tabsHeader} selectedTab={selectedTab} />
+			<TabContent
+				tabs={tabsHeader}
+				selectedTab={selectedTab}
+				setSelectedTab={setSelectedTab}
+			/>
 		</div>
 	);
 };
@@ -77,15 +81,27 @@ export default MealAccordion;
 type TabContentProps = {
 	tabs: TabHeaderType[];
 	selectedTab: string;
+	setSelectedTab: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const TabContent = ({ tabs, selectedTab }: TabContentProps) => {
+const TabContent = ({ tabs, selectedTab, setSelectedTab }: TabContentProps) => {
 	return (
 		<div className="tab-content">
 			<div className="tab-content__header">
 				<h2>{tabs.find((tab) => tab.id === selectedTab)?.title} Collection</h2>
 				<div className="navigation">
-					<div className="navigation__left">
+					<div
+						className={`navigation__left ${
+							tabs.findIndex((tab) => tab.id === selectedTab) === 0
+								? 'disabled'
+								: ''
+						}`}
+						onClick={() =>
+							setSelectedTab(
+								tabs[tabs.findIndex((tab) => tab.id === selectedTab) - 1].id,
+							)
+						}
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -100,7 +116,19 @@ const TabContent = ({ tabs, selectedTab }: TabContentProps) => {
 							/>
 						</svg>
 					</div>
-					<div className="navigation__right">
+					<div
+						className={`navigation__right ${
+							tabs.findIndex((tab) => tab.id === selectedTab) ===
+							tabs.length - 1
+								? 'disabled'
+								: ''
+						}`}
+						onClick={() =>
+							setSelectedTab(
+								tabs[tabs.findIndex((tab) => tab.id === selectedTab) + 1].id,
+							)
+						}
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
@@ -122,7 +150,7 @@ const TabContent = ({ tabs, selectedTab }: TabContentProps) => {
 				{mealsList
 					.find((mealType) => mealType.category === selectedTab)
 					?.meals.map((meals) => (
-						<TabCard {...meals} />
+						<TabCard {...meals} key={meals.name} />
 					))}
 			</div>
 		</div>
