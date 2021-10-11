@@ -202,12 +202,6 @@
 
 @media (max-width: 768px) {
   .footer {
-    &__img {
-      form {
-        // flex-direction: column;
-        // gap: 1rem;
-      }
-    }
 
     &__top, &__bottom {
       max-width: calc(100vw - 100px);
