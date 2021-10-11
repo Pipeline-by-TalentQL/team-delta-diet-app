@@ -20,7 +20,7 @@ const ComponentsPreview = () => {
 							inputType="normal"
 							size="sm"
 							onChange={() => {}}
-						></CustomInput>
+						/>
 
 						<h4>Normal Input (default size)</h4>
 						<CustomInput
@@ -28,7 +28,7 @@ const ComponentsPreview = () => {
 							placeholder="Input Field"
 							inputType="normal"
 							onChange={() => {}}
-						></CustomInput>
+						/>
 
 						<h4>Normal Input (lg)</h4>
 						<CustomInput
@@ -37,7 +37,7 @@ const ComponentsPreview = () => {
 							inputType="normal"
 							size="lg"
 							onChange={() => {}}
-						></CustomInput>
+						/>
 					</div>
 				</Col>
 			</Row>
