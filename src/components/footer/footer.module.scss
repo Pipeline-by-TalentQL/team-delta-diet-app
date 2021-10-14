@@ -1,14 +1,241 @@
 .footer {
-  max-width: 800px;
-  margin: auto;
+  margin: 20rem auto 70px;
 
-  h2 {
-    font-weight: 600;
-    font-size: 28px;
-    margin: 0;
+  &__img {
+    width: 100vw;
+    height: 488px;
+    background: linear-gradient(0deg, rgba(178, 0, 0, 0.8), rgba(178, 0, 0, 0.8));
+    background-blend-mode: multiply, normal;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 73px 160px;
+
+    color: white;
+
+    h2 {
+      font-weight: 600;
+      font-size: 42px;
+      line-height: 52px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      gap: 15px;
+      input {
+        border: none;
+        width: 420px;
+        padding: 18px 12px;
+        background: #FFFFFF;
+        border-radius: 4px;
+      }
+  
+      button {
+        width: 239px;
+        color: #B20000;
+      }
+
+    }
+
+    .svgSection {
+      section {
+        margin-top: 25px;
+        display: flex;
+        gap: 25px;
+
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
   }
 
-  svg {
-    fill: rgba(32, 142, 233, 0.733);
+  &__top {
+    max-width: calc(100vw - 400px);
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #EDEBE9;
+      position: absolute;
+      bottom: -40px;
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 28px;
+      margin: 0;
+    }
+  
+    .footer__social-icons {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+  
+      .footer__social-icon {
+        width: 38px;
+        height: 38px;
+        background: #EDEBE9;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    svg {
+      fill: #0078D4;
+    }
+  }
+
+  &__bottom {
+    max-width: calc(100vw - 400px);
+    margin: auto;
+    padding-top: 40px;
+
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      color: #B20000;
+      margin-bottom: 25px;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      input {
+        border: 1px solid #8A8886;
+        box-sizing: border-box;
+        border-radius: 3px;
+        padding: 9px 12px;
+        margin-top: 1rem;
+        width: 328px;
+      }
+
+      button {
+        width: 328px;
+      }
+    }
+
+    .bottom__center {
+      section {
+        display: flex;
+        gap: 42px;
+        font-size: 12px;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          a {
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom__right {
+      padding-right: 2.5rem;
+      .channels {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .channel {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          svg {
+            width: 16px;
+            height: 16px;
+            stroke: #B20000;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    &__top, &__bottom {
+      max-width: calc(100vw - 200px);
+
+      form {
+        input, button {
+          width: 328px;
+        }
+      }
+      .bottom__right {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+
+    &__top, &__bottom {
+      max-width: calc(100vw - 100px);
+
+      form {
+        input, button {
+          width: 300px;
+        }
+      }
+      .bottom__right {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 699px) {
+  .footer {
+  
+    &__img {
+      form {
+        flex-direction: column;
+
+        input, button {
+          width: 300px;
+        }
+      }
+    }
+
+
+    &__bottom {
+      flex-wrap: wrap;
+      gap: 2.5rem
+    }
   }
 }

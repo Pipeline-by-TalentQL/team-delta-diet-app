@@ -1,10 +1,14 @@
 import React from 'react';
+import Navbar from '../../components/navbar/navbar';
+import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 
 const LandingPage = () => {
 	return (
 		<div>
-			<Header></Header>
+			<Navbar />
+			<Header />
+			<Footer />
 		</div>
 	);
 };
