@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CustomButton from '../global/customButton/customButton';
 import styles from './navbar.module.scss';
 
@@ -13,9 +14,9 @@ const Navbar = () => {
 				<a href="" className={styles.navbar__link}>
 					About
 				</a>
-				<a href="" className={styles.navbar__link}>
-					FAQ
-				</a>
+				<Link className={styles.navbar__link} to="/app/login">
+					Login
+				</Link>
 				<a href="" className={styles.navbar__link}>
 					Contacts
 				</a>
