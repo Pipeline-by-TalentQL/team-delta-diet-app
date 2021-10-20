@@ -1,11 +1,12 @@
 import React, { Fragment, lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import './assets/scss/app.scss';
-import ErrorBoundary from './components/errors/errorBoundary/errorBoundary';
+import ErrorBoundary from './landing/components/errors/errorBoundary/errorBoundary';
 const ComponentsPreview = lazy(
-	() => import('./pages/componentsPreview/componentsPreview'),
+	() => import('./landing/pages/componentsPreview/componentsPreview'),
 );
-const LandingPage = lazy(() => import('./pages/landingPage/landingPage'));
+const LandingPage = lazy(
+	() => import('./landing/pages/landingPage/landingPage'),
+);
 
 const App = () => (
 	<Fragment>

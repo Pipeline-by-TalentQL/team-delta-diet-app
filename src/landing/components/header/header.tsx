@@ -30,7 +30,7 @@ const Header = () => {
 								Join WaitList{' '}
 								<img
 									style={{ marginLeft: '7px' }}
-									src="/src/assets/images/icons/arrow-right.png"
+									src="src/landing/assets/images/icons/arrow-right.png"
 								/>
 							</CustomButton>
 						</CustomInput>
@@ -41,7 +41,7 @@ const Header = () => {
 						<Col className={`${styles.headerCol} pl-3 my-auto`}>
 							<div className="d-flex flex-row">
 								<div className={styles.headerBoxImage}>
-									<img src="/src/assets/images/icons/select.png" />
+									<img src="/src/landing/assets/images/icons/select.png" />
 								</div>
 								<div>
 									<h3 className="text-md-2">Select your preference</h3>
@@ -56,7 +56,7 @@ const Header = () => {
 						<Col className={`${styles.headerCol} my-auto`}>
 							<div className="d-flex flex-row">
 								<div className={styles.headerBoxImage}>
-									<img src="/src/assets/images/icons/plan.png" />
+									<img src="/src/landing/assets/images/icons/plan.png" />
 								</div>
 								<div>
 									<h3 className="text-md-2">Choose Plan and Customize</h3>
@@ -71,7 +71,7 @@ const Header = () => {
 						<Col className={`${styles.headerCol} my-auto`}>
 							<div className="d-flex flex-row">
 								<div className={styles.headerBoxImage}>
-									<img src="/src/assets/images/icons/deliver.png" />
+									<img src="/src/landing/assets/images/icons/deliver.png" />
 								</div>
 								<div>
 									<h3 className="text-md-2">We deliver, you Enjoy</h3>
