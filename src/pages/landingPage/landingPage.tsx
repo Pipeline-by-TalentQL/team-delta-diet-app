@@ -7,9 +7,10 @@ import MealAccordion from '../../components/meal-accordion/meal-accordion';
 const LandingPage = () => {
 	return (
 		<div>
-
+			<Navbar />
 			<Header />
 			<MealAccordion />
+			<Footer />
 		</div>
 	);
 };
