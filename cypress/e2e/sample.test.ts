@@ -9,8 +9,4 @@ describe('sample app works', () => {
 		const logos = user.findAllByText('LOGO');
 		logos.should('have.length', 2);
 	});
-
-	it('should see the navbar button', () => {
-		user.findByText('Schedule a Demo');
-	});
 });

@@ -8,7 +8,8 @@ const LandingPage = lazy(
 	() => import('./landing/pages/landingPage/landingPage'),
 );
 
-import Login from './APP/pages/login';
+import mainApp from './APP/mainApp';
+
 const App = () => (
 	<Fragment>
 		<Switch>
@@ -17,7 +18,7 @@ const App = () => (
 					<Route exact component={ComponentsPreview} path="/components" />
 					<Route exact component={LandingPage} path="/" />
 
-					<Route exact component={Login} path="/app/login" />
+					<Route component={mainApp} path="/app" />
 				</Suspense>
 			</ErrorBoundary>
 		</Switch>
