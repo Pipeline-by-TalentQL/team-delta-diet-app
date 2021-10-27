@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState } from 'react';
+import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { device } from '../constants/device-sizes';
 import LoginImg from '../assets/images/login.png';
@@ -7,7 +7,7 @@ import ResetPasswordImg from '../assets/images/reset-password.png';
 interface DefaultImageProps {
 	imageSrc?: string;
 	imageAlt?: string;
-	pageTitle: 'login' | 'signup' | 'resetPassword';
+	pageTitle: string;
 }
 type AuthProps = DefaultImageProps & PropsWithChildren<{}>;
 
@@ -38,25 +38,29 @@ const AuthContent = styled.div`
 `;
 
 const AuthWrapper = ({ children, pageTitle }: AuthProps) => {
-	const [imageSrc, setImageSrc] = useState<string>();
-	const [imageAlt, setImageAlt] = useState<string>();
 	switch (pageTitle) {
-		case 'login':
-			setImageSrc(LoginImg);
-			setImageAlt('login-image');
-			break;
+		// case 'login':
+		// 	return (
+		// 		<AuthWrapperStyled>
+		// 			<AuthImage src={LoginImg} alt="login-image" />
+		// 			<AuthContent>{children}</AuthContent>
+		// 		</AuthWrapperStyled>
+		// 	);
 		case 'resetPassword':
-			setImageSrc(ResetPasswordImg);
-			setImageAlt('reset-password-image');
+			return (
+				<AuthWrapperStyled>
+					<AuthImage src={ResetPasswordImg} alt="resetpassword-image" />
+					<AuthContent>{children}</AuthContent>
+				</AuthWrapperStyled>
+			);
 		default:
-			break;
+			return (
+				<AuthWrapperStyled>
+					<AuthImage src={LoginImg} alt="login-image" />
+					<AuthContent>{children}</AuthContent>
+				</AuthWrapperStyled>
+			);
 	}
-	return (
-		<AuthWrapperStyled>
-			<AuthImage src={imageSrc} alt={imageAlt} />
-			<AuthContent>{children}</AuthContent>
-		</AuthWrapperStyled>
-	);
 };
 
 export default AuthWrapper;

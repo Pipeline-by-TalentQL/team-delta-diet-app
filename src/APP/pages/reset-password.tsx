@@ -1,7 +1,6 @@
 import React from 'react';
 import { FormHeader } from '@atlaskit/form';
 import AuthWrapper from '../components/AuthPageWrapper';
-// import ResetPasswordImg from '';
 
 const ResetPassword = () => {
 	return (

@@ -11,7 +11,7 @@ function MainApp() {
 			<Switch>
 				<Route
 					exact
-					path={`${path}/`}
+					path={`${path}`}
 					render={() => <Redirect to={`${path}/login`} />}
 				/>
 				<Route exact component={Login} path={`${path}/login`} />
