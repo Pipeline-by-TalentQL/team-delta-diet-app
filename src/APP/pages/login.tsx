@@ -1,10 +1,13 @@
 import React from 'react';
+import AuthWrapper from '../components/AuthPageWrapper';
 
 const Login = () => {
 	return (
-		<div className="login">
-			<p>Login</p>
-		</div>
+		<AuthWrapper pageTitle="login">
+			<div className="login">
+				<button>Name</button>
+			</div>
+		</AuthWrapper>
 	);
 };
 

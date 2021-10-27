@@ -23,7 +23,7 @@
 			"cypress",
 			"@testing-library/react",
 			"@testing-library/cypress"
-		]
+		],
 	},
 	"include": ["src"],
 	"exclude": ["node_modules/**/*.(js|ts|tsx)", "vite-env.d.ts"],
