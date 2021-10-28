@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { device } from '../constants/device-sizes';
 import LoginImg from '../assets/images/login.png';
 import ResetPasswordImg from '../assets/images/reset-password.png';
@@ -32,9 +32,14 @@ const AuthImage = styled.img`
 	}
 `;
 
-const AuthContent = styled.div`
+const AuthContentWrapper = styled.div`
 	display: flex;
-	padding: 137px 190px;
+	align-items: center;
+`;
+
+const AuthContent = styled.div`
+	width: 340px;
+	margin: 0 auto;
 `;
 
 const AuthWrapper = ({ children, pageTitle }: AuthProps) => {
@@ -50,14 +55,18 @@ const AuthWrapper = ({ children, pageTitle }: AuthProps) => {
 			return (
 				<AuthWrapperStyled>
 					<AuthImage src={ResetPasswordImg} alt="resetpassword-image" />
-					<AuthContent>{children}</AuthContent>
+					<AuthContentWrapper>
+						<AuthContent>{children}</AuthContent>
+					</AuthContentWrapper>
 				</AuthWrapperStyled>
 			);
 		default:
 			return (
 				<AuthWrapperStyled>
 					<AuthImage src={LoginImg} alt="login-image" />
-					<AuthContent>{children}</AuthContent>
+					<AuthContentWrapper>
+						<AuthContent>{children}</AuthContent>
+					</AuthContentWrapper>
 				</AuthWrapperStyled>
 			);
 	}

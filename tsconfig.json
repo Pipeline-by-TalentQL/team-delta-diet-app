@@ -19,7 +19,6 @@
 			"jest",
 			"react",
 			"react-dom",
-			"styled-components",
 			"cypress",
 			"@testing-library/react",
 			"@testing-library/cypress"
