@@ -2,7 +2,13 @@ import React, { CSSProperties } from 'react';
 import Form, { FormHeader, Field } from '@atlaskit/form';
 import TextField from '@atlaskit/textfield';
 import Button, { LoadingButton } from '@atlaskit/button';
+import { Checkbox } from '@atlaskit/checkbox';
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
+import { Link } from 'react-router-dom';
 import AuthWrapper from '../components/AuthPageWrapper';
+import GoogleIcon from '../assets/images/google-icon.svg';
+import Spacer from '../components/Spacer';
 
 const formButtonStyles: CSSProperties = {
 	height: 'auto',
@@ -18,6 +24,7 @@ const googleButtonStyle: CSSProperties = {
 	padding: '3px 0',
 	height: 'auto',
 	margin: '25px 0 40px',
+	borderRadius: '8px',
 };
 
 const UserEmailField = () => (
@@ -45,13 +52,39 @@ const UserPasswordField = () => (
 	</Field>
 );
 
+const InlineFormDiv = () => {
+	return (
+		<div className="extra-options">
+			<Checkbox
+				value="default checkbox"
+				label="Remember me"
+				onChange={() => {}}
+				name="checkbox-default"
+				testId="cb-default"
+			/>
+			<Link to="/app/reset-password">Forgot Password?</Link>
+		</div>
+	);
+};
+
 const Login = () => {
 	return (
 		<AuthWrapper pageTitle="login">
 			<div className="login">
 				<FormHeader title="Login" />
 				<Button appearance="default" style={googleButtonStyle}>
-					Sign in with Google
+					<div
+						css={{
+							verticalAlign: 'sub',
+							display: 'inline-flex',
+							marginRight: '10px',
+						}}
+					>
+						<GoogleIcon />
+					</div>
+					<span css={{ color: '#0747A6', fontSize: '16px' }}>
+						Sign in with Google
+					</span>
 				</Button>
 				<Form<{ email: string; password: string }>
 					onSubmit={(data) => {
@@ -64,7 +97,10 @@ const Login = () => {
 					{({ formProps, submitting }) => (
 						<form {...formProps}>
 							<UserEmailField />
+							<Spacer size={25} />
 							<UserPasswordField />
+							<Spacer size={12} />
+							<InlineFormDiv />
 							<LoadingButton
 								style={formButtonStyles}
 								type="submit"

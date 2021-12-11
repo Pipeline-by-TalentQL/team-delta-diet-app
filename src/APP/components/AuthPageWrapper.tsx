@@ -22,6 +22,14 @@ const AuthWrapperStyled = styled.div`
 		grid-template-columns: 55% 45%;
 		grid-template-rows: 1fr;
 	}
+
+	a {
+		font-weight: 600;
+		font-size: 12px;
+		line-height: 16px;
+		text-decoration: none;
+		color: #0747a6;
+	}
 `;
 
 const AuthImage = styled.img`
