@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import AuthWrapper from '../components/AuthPageWrapper';
 import GoogleIcon from '../assets/images/google-icon.svg';
 import Spacer from '../components/Spacer';
+import TextBetweenLines from '../components/TextBetweenLines';
 
 const formButtonStyles: CSSProperties = {
 	height: 'auto',
@@ -19,7 +20,6 @@ const formButtonStyles: CSSProperties = {
 
 const googleButtonStyle: CSSProperties = {
 	background: 'white',
-	width: '100%',
 	border: '#0052CC solid 2px',
 	padding: '3px 0',
 	height: 'auto',
@@ -27,13 +27,41 @@ const googleButtonStyle: CSSProperties = {
 	borderRadius: '8px',
 };
 
-const UserEmailField = () => (
-	<Field aria-required name="email" defaultValue="" label="Email" isRequired>
-		{({ fieldProps }) => (
-			<TextField placeholder="example@gmail.com" type="email" {...fieldProps} />
-		)}
-	</Field>
-);
+const UserEmailField = () => {
+	return (
+		<>
+			<Field
+				aria-required
+				name="email"
+				defaultValue=""
+				label="Email"
+				isRequired
+			>
+				{({ fieldProps }) => (
+					<TextField
+						placeholder="example@gmail.com"
+						type="email"
+						{...fieldProps}
+					/>
+				)}
+				{/* <svg
+					xmlns="http://www.w3.org/2000/svg"
+					className="h-6 w-6"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth="2"
+						d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+					/>
+				</svg> */}
+			</Field>
+		</>
+	);
+};
 const UserPasswordField = () => (
 	<Field
 		aria-required
@@ -54,7 +82,14 @@ const UserPasswordField = () => (
 
 const InlineFormDiv = () => {
 	return (
-		<div className="extra-options">
+		<div
+			className="extra-options"
+			css={{
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'space-between',
+			}}
+		>
 			<Checkbox
 				value="default checkbox"
 				label="Remember me"
@@ -72,7 +107,11 @@ const Login = () => {
 		<AuthWrapper pageTitle="login">
 			<div className="login">
 				<FormHeader title="Login" />
-				<Button appearance="default" style={googleButtonStyle}>
+				<Button
+					appearance="default"
+					shouldFitContainer
+					style={googleButtonStyle}
+				>
 					<div
 						css={{
 							verticalAlign: 'sub',
@@ -86,6 +125,8 @@ const Login = () => {
 						Sign in with Google
 					</span>
 				</Button>
+				<TextBetweenLines text="or Sign in with email" />
+				<Spacer size={28} />
 				<Form<{ email: string; password: string }>
 					onSubmit={(data) => {
 						console.log('form data', data);
@@ -100,7 +141,9 @@ const Login = () => {
 							<Spacer size={25} />
 							<UserPasswordField />
 							<Spacer size={12} />
+
 							<InlineFormDiv />
+
 							<LoadingButton
 								style={formButtonStyles}
 								type="submit"
