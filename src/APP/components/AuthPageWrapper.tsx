@@ -1,8 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import styled from '@emotion/styled';
 import { device } from '../constants/device-sizes';
-import LoginImg from '../assets/images/login.png';
-import ResetPasswordImg from '../assets/images/reset-password.png';
+import { cloudinaryImages } from '../constants/file-links';
 
 interface DefaultImageProps {
 	imageSrc?: string;
@@ -51,6 +50,7 @@ const AuthContent = styled.div`
 `;
 
 const AuthWrapper = ({ children, pageTitle }: AuthProps) => {
+	const { loginImage, forgotPasswordImage } = cloudinaryImages;
 	switch (pageTitle) {
 		// case 'login':
 		// 	return (
@@ -62,7 +62,7 @@ const AuthWrapper = ({ children, pageTitle }: AuthProps) => {
 		case 'resetPassword':
 			return (
 				<AuthWrapperStyled>
-					<AuthImage src={ResetPasswordImg} alt="resetpassword-image" />
+					<AuthImage src={forgotPasswordImage} alt="resetpassword-image" />
 					<AuthContentWrapper>
 						<AuthContent>{children}</AuthContent>
 					</AuthContentWrapper>
@@ -71,7 +71,7 @@ const AuthWrapper = ({ children, pageTitle }: AuthProps) => {
 		default:
 			return (
 				<AuthWrapperStyled>
-					<AuthImage src={LoginImg} alt="login-image" />
+					<AuthImage src={loginImage} alt="login-image" />
 					<AuthContentWrapper>
 						<AuthContent>{children}</AuthContent>
 					</AuthContentWrapper>

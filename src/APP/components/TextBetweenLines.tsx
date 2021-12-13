@@ -21,8 +21,6 @@ const Text = styled.div`
 		background-color: currentColor;
 	}
 `;
-const TextBetweenLines = ({ text }: Props) => {
-	return <Text className="header__center">{text}</Text>;
-};
+const TextBetweenLines = ({ text }: Props) => <Text>{text}</Text>;
 
 export default TextBetweenLines;
