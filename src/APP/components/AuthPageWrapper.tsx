@@ -50,7 +50,8 @@ const AuthContent = styled.div`
 `;
 
 const AuthWrapper = ({ children, pageTitle }: AuthProps) => {
-	const { loginImage, forgotPasswordImage } = cloudinaryImages;
+	const { loginImage, forgotPasswordImage, resetPasswordImage, signupImage } =
+		cloudinaryImages;
 	switch (pageTitle) {
 		// case 'login':
 		// 	return (
@@ -62,7 +63,25 @@ const AuthWrapper = ({ children, pageTitle }: AuthProps) => {
 		case 'resetPassword':
 			return (
 				<AuthWrapperStyled>
-					<AuthImage src={forgotPasswordImage} alt="resetpassword-image" />
+					<AuthImage src={resetPasswordImage} alt="resetpassword-image" />
+					<AuthContentWrapper>
+						<AuthContent>{children}</AuthContent>
+					</AuthContentWrapper>
+				</AuthWrapperStyled>
+			);
+		case 'forgotPassword':
+			return (
+				<AuthWrapperStyled>
+					<AuthImage src={forgotPasswordImage} alt="forgotPassword-image" />
+					<AuthContentWrapper>
+						<AuthContent>{children}</AuthContent>
+					</AuthContentWrapper>
+				</AuthWrapperStyled>
+			);
+		case 'signup':
+			return (
+				<AuthWrapperStyled>
+					<AuthImage src={signupImage} alt="signup-image" />
 					<AuthContentWrapper>
 						<AuthContent>{children}</AuthContent>
 					</AuthContentWrapper>

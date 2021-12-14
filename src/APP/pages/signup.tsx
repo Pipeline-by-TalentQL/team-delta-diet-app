@@ -97,44 +97,16 @@ const InlineFormDiv = () => {
 				name="checkbox-default"
 				testId="cb-default"
 			/>
-			<Link to="/app/forgot-password">Forgot Password?</Link>
+			<Link to="/app/reset-password">Forgot Password?</Link>
 		</div>
 	);
 };
 
-const FooterDiv = () => {
+const SignUp = () => {
 	return (
-		<div css={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-			<p>Not yet registered?</p>
-			<Link
-				css={{ color: '#0747A6', display: 'flex', alignItems: 'center' }}
-				to="/app/signup"
-			>
-				Create an Account
-				<svg
-					css={{ width: '20px', marginLeft: '8px' }}
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth="2"
-						d="M17 8l4 4m0 0l-4 4m4-4H3"
-					/>
-				</svg>
-			</Link>
-		</div>
-	);
-};
-
-const Login = () => {
-	return (
-		<AuthWrapper pageTitle="login">
-			<div className="login">
-				<FormHeader title="Login" />
+		<AuthWrapper pageTitle="signup">
+			<div className="signup">
+				<FormHeader title="Registration" />
 				<Button
 					appearance="default"
 					shouldFitContainer
@@ -183,10 +155,9 @@ const Login = () => {
 						</form>
 					)}
 				</Form>
-				<FooterDiv />
 			</div>
 		</AuthWrapper>
 	);
 };
 
-export default Login;
+export default SignUp;
