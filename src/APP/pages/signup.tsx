@@ -1,13 +1,14 @@
 import React, { CSSProperties } from 'react';
-import Form, { FormHeader, Field } from '@atlaskit/form';
-import TextField from '@atlaskit/textfield';
+import Form, { FormHeader } from '@atlaskit/form';
 import Button, { LoadingButton } from '@atlaskit/button';
 import { Checkbox } from '@atlaskit/checkbox';
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { Link } from 'react-router-dom';
-import AuthWrapper from '../components/AuthPageWrapper';
 import GoogleIcon from '../assets/images/google-icon.svg';
+
+import Input from '../components/InputField';
+import AuthWrapper from '../components/AuthPageWrapper';
 import Spacer from '../components/Spacer';
 import TextBetweenLines from '../components/TextBetweenLines';
 
@@ -27,59 +28,6 @@ const googleButtonStyle: CSSProperties = {
 	borderRadius: '8px',
 };
 
-const UserEmailField = () => {
-	return (
-		<>
-			<Field
-				aria-required
-				name="email"
-				defaultValue=""
-				label="Email"
-				isRequired
-			>
-				{({ fieldProps }) => (
-					<TextField
-						placeholder="example@gmail.com"
-						type="email"
-						{...fieldProps}
-					/>
-				)}
-				{/* <svg
-					xmlns="http://www.w3.org/2000/svg"
-					className="h-6 w-6"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth="2"
-						d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-					/>
-				</svg> */}
-			</Field>
-		</>
-	);
-};
-const UserPasswordField = () => (
-	<Field
-		aria-required
-		name="password"
-		defaultValue=""
-		label="Password"
-		isRequired
-	>
-		{({ fieldProps }) => (
-			<TextField
-				placeholder="6+ Strong Characters"
-				type="password"
-				{...fieldProps}
-			/>
-		)}
-	</Field>
-);
-
 const InlineFormDiv = () => {
 	return (
 		<div
@@ -98,6 +46,34 @@ const InlineFormDiv = () => {
 				testId="cb-default"
 			/>
 			<Link to="/app/reset-password">Forgot Password?</Link>
+		</div>
+	);
+};
+
+const FooterDiv = () => {
+	return (
+		<div css={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+			<p>Not yet registered?</p>
+			<Link
+				css={{ color: '#0747A6', display: 'flex', alignItems: 'center' }}
+				to="/app/login"
+			>
+				Already have an account
+				<svg
+					css={{ width: '20px', marginLeft: '8px' }}
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth="2"
+						d="M17 8l4 4m0 0l-4 4m4-4H3"
+					/>
+				</svg>
+			</Link>
 		</div>
 	);
 };
@@ -122,10 +98,10 @@ const SignUp = () => {
 						<GoogleIcon />
 					</div>
 					<span css={{ color: '#0747A6', fontSize: '16px' }}>
-						Sign in with Google
+						Sign up with Google
 					</span>
 				</Button>
-				<TextBetweenLines text="or Sign in with email" />
+				<TextBetweenLines text="or Sign up with email" />
 				<Spacer size={28} />
 				<Form<{ email: string; password: string }>
 					onSubmit={(data) => {
@@ -137,9 +113,29 @@ const SignUp = () => {
 				>
 					{({ formProps, submitting }) => (
 						<form {...formProps}>
-							<UserEmailField />
-							<Spacer size={25} />
-							<UserPasswordField />
+							<Input
+								name="fullName"
+								label="Fullname"
+								placeholder="Obika Nzube"
+								type="text"
+								isRequired
+							/>
+							<Spacer size={20} />
+							<Input
+								name="Email"
+								label="Email"
+								placeholder="example@mail.com"
+								type="email"
+								isRequired
+							/>
+							<Spacer size={20} />
+							<Input
+								name="Password"
+								label="Password"
+								placeholder="6+ Strong Characters"
+								type="password"
+								isRequired
+							/>
 							<Spacer size={12} />
 
 							<InlineFormDiv />
@@ -150,11 +146,12 @@ const SignUp = () => {
 								appearance="primary"
 								isLoading={submitting}
 							>
-								Submit
+								Register
 							</LoadingButton>
 						</form>
 					)}
 				</Form>
+				<FooterDiv />
 			</div>
 		</AuthWrapper>
 	);

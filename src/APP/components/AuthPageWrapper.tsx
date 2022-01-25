@@ -17,8 +17,13 @@ const AuthWrapperStyled = styled.div`
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 1fr;
 
-	@media ${device.laptop} {
+	@media ${device.laptopL} {
 		grid-template-columns: 55% 45%;
+		grid-template-rows: 1fr;
+	}
+
+	@media ${device.laptop} {
+		grid-template-columns: 1fr;
 		grid-template-rows: 1fr;
 	}
 
