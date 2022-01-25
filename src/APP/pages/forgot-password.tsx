@@ -1,7 +1,10 @@
 import React, { CSSProperties } from 'react';
-import Form, { FormHeader, Field } from '@atlaskit/form';
-import TextField from '@atlaskit/textfield';
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
+import Form, { FormHeader } from '@atlaskit/form';
 import { LoadingButton } from '@atlaskit/button';
+import { Link } from 'react-router-dom';
+import Input from '../components/InputField';
 import AuthWrapper from '../components/AuthPageWrapper';
 import Spacer from '../components/Spacer';
 
@@ -12,23 +15,33 @@ const formButtonStyles: CSSProperties = {
 	margin: '25px 0',
 };
 
-const UserPasswordField = () => (
-	<Field
-		aria-required
-		name="password"
-		defaultValue=""
-		label="Password"
-		isRequired
-	>
-		{({ fieldProps }) => (
-			<TextField
-				placeholder="6+ Strong Characters"
-				type="password"
-				{...fieldProps}
-			/>
-		)}
-	</Field>
-);
+const FooterDiv = () => {
+	return (
+		<div css={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+			<p>Already have an account</p>
+			<Link
+				css={{ color: '#0747A6', display: 'flex', alignItems: 'center' }}
+				to="/app/login"
+			>
+				Login
+				<svg
+					css={{ width: '20px', marginLeft: '8px' }}
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth="2"
+						d="M17 8l4 4m0 0l-4 4m4-4H3"
+					/>
+				</svg>
+			</Link>
+		</div>
+	);
+};
 
 const ForgotPassword = () => {
 	return (
@@ -49,7 +62,13 @@ const ForgotPassword = () => {
 					{({ formProps, submitting }) => (
 						<form {...formProps}>
 							<Spacer size={30} />
-							<UserPasswordField />
+							<Input
+								name="Email"
+								label="Email"
+								placeholder="example@mail.com"
+								type="email"
+								isRequired
+							/>
 							<LoadingButton
 								style={formButtonStyles}
 								type="submit"
@@ -61,6 +80,7 @@ const ForgotPassword = () => {
 						</form>
 					)}
 				</Form>
+				<FooterDiv />
 			</div>
 		</AuthWrapper>
 	);

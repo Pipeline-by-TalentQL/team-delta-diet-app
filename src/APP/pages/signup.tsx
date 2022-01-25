@@ -1,7 +1,6 @@
 import React, { CSSProperties } from 'react';
 import Form, { FormHeader } from '@atlaskit/form';
 import Button, { LoadingButton } from '@atlaskit/button';
-import { Checkbox } from '@atlaskit/checkbox';
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { Link } from 'react-router-dom';
@@ -26,28 +25,6 @@ const googleButtonStyle: CSSProperties = {
 	height: 'auto',
 	margin: '25px 0 40px',
 	borderRadius: '8px',
-};
-
-const InlineFormDiv = () => {
-	return (
-		<div
-			className="extra-options"
-			css={{
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'space-between',
-			}}
-		>
-			<Checkbox
-				value="default checkbox"
-				label="Remember me"
-				onChange={() => {}}
-				name="checkbox-default"
-				testId="cb-default"
-			/>
-			<Link to="/app/reset-password">Forgot Password?</Link>
-		</div>
-	);
 };
 
 const FooterDiv = () => {
@@ -137,8 +114,6 @@ const SignUp = () => {
 								isRequired
 							/>
 							<Spacer size={12} />
-
-							<InlineFormDiv />
 
 							<LoadingButton
 								style={formButtonStyles}
