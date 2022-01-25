@@ -1,12 +1,12 @@
 describe('sample app works', () => {
 	const user = cy;
 	beforeEach(() => {
-		user.visit('/');
+		user.visit('/app/login');
 	});
 
 	it('load the app correctly', () => {
 		// user.findByText('LOGO');
-		const logos = user.findAllByText('LOGO');
-		logos.should('have.length', 2);
+		const logos = user.findAllByText('Login');
+		logos.should('have.length', 1);
 	});
 });
