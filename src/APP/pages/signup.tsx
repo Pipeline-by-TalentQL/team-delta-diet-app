@@ -1,13 +1,13 @@
 import React, { CSSProperties } from 'react';
-import Form, { FormHeader, Field } from '@atlaskit/form';
-import TextField from '@atlaskit/textfield';
+import Form, { FormHeader } from '@atlaskit/form';
 import Button, { LoadingButton } from '@atlaskit/button';
-import { Checkbox } from '@atlaskit/checkbox';
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { Link } from 'react-router-dom';
-import AuthWrapper from '../components/AuthPageWrapper';
 import GoogleIcon from '../assets/images/google-icon.svg';
+
+import Input from '../components/InputField';
+import AuthWrapper from '../components/AuthPageWrapper';
 import Spacer from '../components/Spacer';
 import TextBetweenLines from '../components/TextBetweenLines';
 
@@ -27,76 +27,15 @@ const googleButtonStyle: CSSProperties = {
 	borderRadius: '8px',
 };
 
-const UserEmailField = () => {
-	return (
-		<>
-			<Field
-				aria-required
-				name="email"
-				defaultValue=""
-				label="Email"
-				isRequired
-			>
-				{({ fieldProps }) => (
-					<TextField
-						placeholder="example@gmail.com"
-						type="email"
-						{...fieldProps}
-					/>
-				)}
-			</Field>
-		</>
-	);
-};
-const UserPasswordField = () => (
-	<Field
-		aria-required
-		name="password"
-		defaultValue=""
-		label="Password"
-		isRequired
-	>
-		{({ fieldProps }) => (
-			<TextField
-				placeholder="6+ Strong Characters"
-				type="password"
-				{...fieldProps}
-			/>
-		)}
-	</Field>
-);
-
-const InlineFormDiv = () => {
-	return (
-		<div
-			className="extra-options"
-			css={{
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'space-between',
-			}}
-		>
-			<Checkbox
-				value="default checkbox"
-				label="Remember me"
-				onChange={() => {}}
-				name="checkbox-default"
-				testId="cb-default"
-			/>
-			<Link to="/app/forgot-password">Forgot Password?</Link>
-		</div>
-	);
-};
-
 const FooterDiv = () => {
 	return (
 		<div css={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
 			<p>Not yet registered?</p>
 			<Link
 				css={{ color: '#0747A6', display: 'flex', alignItems: 'center' }}
-				to="/app/signup"
+				to="/app/login"
 			>
-				Create an Account
+				Already have an account
 				<svg
 					css={{ width: '20px', marginLeft: '8px' }}
 					xmlns="http://www.w3.org/2000/svg"
@@ -116,11 +55,11 @@ const FooterDiv = () => {
 	);
 };
 
-const Login = () => {
+const SignUp = () => {
 	return (
-		<AuthWrapper pageTitle="login">
-			<div className="login">
-				<FormHeader title="Login" />
+		<AuthWrapper pageTitle="signup">
+			<div className="signup">
+				<FormHeader title="Registration" />
 				<Button
 					appearance="default"
 					shouldFitContainer
@@ -136,10 +75,10 @@ const Login = () => {
 						<GoogleIcon />
 					</div>
 					<span css={{ color: '#0747A6', fontSize: '16px' }}>
-						Sign in with Google
+						Sign up with Google
 					</span>
 				</Button>
-				<TextBetweenLines text="or Sign in with email" />
+				<TextBetweenLines text="or Sign up with email" />
 				<Spacer size={28} />
 				<Form<{ email: string; password: string }>
 					onSubmit={(data) => {
@@ -151,12 +90,30 @@ const Login = () => {
 				>
 					{({ formProps, submitting }) => (
 						<form {...formProps}>
-							<UserEmailField />
-							<Spacer size={25} />
-							<UserPasswordField />
+							<Input
+								name="fullName"
+								label="Fullname"
+								placeholder="Obika Nzube"
+								type="text"
+								isRequired
+							/>
+							<Spacer size={20} />
+							<Input
+								name="Email"
+								label="Email"
+								placeholder="example@mail.com"
+								type="email"
+								isRequired
+							/>
+							<Spacer size={20} />
+							<Input
+								name="Password"
+								label="Password"
+								placeholder="6+ Strong Characters"
+								type="password"
+								isRequired
+							/>
 							<Spacer size={12} />
-
-							<InlineFormDiv />
 
 							<LoadingButton
 								style={formButtonStyles}
@@ -164,7 +121,7 @@ const Login = () => {
 								appearance="primary"
 								isLoading={submitting}
 							>
-								Submit
+								Register
 							</LoadingButton>
 						</form>
 					)}
@@ -175,4 +132,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default SignUp;

@@ -3,7 +3,6 @@ import reactRefresh from '@vitejs/plugin-react-refresh';
 import reactSvgPlugin from 'vite-plugin-react-svg';
 import { defineConfig } from 'vite';
 
-// https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
 		reactRefresh(),
@@ -19,5 +18,8 @@ export default defineConfig({
 		jsxFactory: '_jsx',
 		jsxFragment: '_jsxFragment',
 		jsxInject: `import { createElement as _jsx, Fragment as _jsxFragment } from 'react'`,
+	},
+	define: {
+		'process.env': {},
 	},
 });
