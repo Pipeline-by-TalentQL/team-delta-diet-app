@@ -23,7 +23,7 @@ const NavSearch = styled.input`
 	width: 212px;
 	border: 2px solid #dfe1e6;
 	border-radius: 5px;
-	padding: 0 10px;
+	padding: 0.5rem 10px;
 `;
 
 const HeaderIcons = () => {

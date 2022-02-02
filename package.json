@@ -31,6 +31,7 @@
 		"lintstaged": "lint-staged"
 	},
 	"dependencies": {
+		"@atlaskit/avatar": "^20.5.4",
 		"@atlaskit/button": "^16.1.2",
 		"@atlaskit/checkbox": "^12.3.3",
 		"@atlaskit/form": "^8.4.2",
