@@ -24,10 +24,10 @@ const MainContent = styled.main`
 `;
 
 export default function DashboardLayout({ children }: PropsWithChildren<{}>) {
-	let { isExact } = useRouteMatch();
+	let { path } = useRouteMatch();
 	return (
 		<>
-			{isExact ? <Header /> : <Spacer size={66} />}
+			{path.includes('onboarding') ? <Spacer size={66} /> : <Header />}
 			<DashboardContentWrapper>
 				<Sidebar />
 				<MainContent>

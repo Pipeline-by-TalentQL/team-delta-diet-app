@@ -4,9 +4,9 @@ describe('sample app works', () => {
 		user.visit('/app/login');
 	});
 
-	it('load the app correctly', () => {
-		// user.findByText('LOGO');
-		const logos = user.findAllByText('Login');
-		logos.should('have.length', 1);
-	});
+	// it('load the app correctly', () => {
+	// 	// user.findByText('LOGO');
+	// 	const logos = user.findAllByText('Login');
+	// 	logos.should('have.length', 1);
+	// });
 });

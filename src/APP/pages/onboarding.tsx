@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+
 import ChevronLeft from '../assets/icons/chevron-left.svg';
 import ChevronRight from '../assets/icons/chevron-right.svg';
+
+import DashboardLayout from '../layouts/dashboard-layoout';
 
 import CuisineOptions from '../components/onboarding/CuisineOption';
 import DietOptions from '../components/onboarding/DietOption';
@@ -76,9 +79,9 @@ const CurrentOnboardingState = ({
 };
 
 export default function Onboarding() {
-	const [onboardingState, setOnboardingState] = useState<number>(1);
+	const [onboardingState, setOnboardingState] = useState<number>(0);
 	return (
-		<>
+		<DashboardLayout>
 			<OnboardContentWrapper>
 				<CurrentOnboardingState currentState={onboardingState} />
 			</OnboardContentWrapper>
@@ -91,6 +94,6 @@ export default function Onboarding() {
 					Next <ChevronRight />
 				</NextButton>
 			</div>
-		</>
+		</DashboardLayout>
 	);
 }
