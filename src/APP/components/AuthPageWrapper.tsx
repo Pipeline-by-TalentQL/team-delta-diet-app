@@ -58,13 +58,6 @@ const AuthWrapper = ({ children, pageTitle }: AuthProps) => {
 	const { loginImage, forgotPasswordImage, resetPasswordImage, signupImage } =
 		cloudinaryImages;
 	switch (pageTitle) {
-		// case 'login':
-		// 	return (
-		// 		<AuthWrapperStyled>
-		// 			<AuthImage src={LoginImg} alt="login-image" />
-		// 			<AuthContent>{children}</AuthContent>
-		// 		</AuthWrapperStyled>
-		// 	);
 		case 'resetPassword':
 			return (
 				<AuthWrapperStyled>

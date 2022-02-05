@@ -8,3 +8,10 @@ export const cloudinaryImages = {
 	signupImage:
 		'https://res.cloudinary.com/sambayo/image/upload/v1639470591/signup.png',
 };
+
+export const DashboardImages = {
+	sideBarAvatar:
+		'https://res.cloudinary.com/sambayo/image/upload/v1643775015/sidebar-img.png',
+	topNavAvatar:
+		'https://res.cloudinary.com/sambayo/image/upload/v1643775015/avatar.png',
+};
