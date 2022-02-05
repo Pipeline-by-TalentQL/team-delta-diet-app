@@ -1,6 +1,8 @@
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import React from 'react';
-import { cuisinesImages } from '../constants/file-links';
+import ChevronLeft from '../assets/icons/chevron-left.svg';
+import ChevronRight from '../assets/icons/chevron-right.svg';
+import CuisineOptions from '../components/onboarding/CuisineOption';
 
 const OnboardContentWrapper = styled.section`
 	margin: 60px 0 40px;
@@ -12,44 +14,6 @@ const OnboardContentWrapper = styled.section`
 	}
 `;
 
-const HorizontalScrollWrapper = styled.div`
-	display: flex;
-	gap: 30px;
-	overflow-x: scroll;
-
-	div {
-		position: relative;
-
-		&:before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 98%;
-			border-radius: 10px;
-			background: linear-gradient(
-				180deg,
-				rgba(0, 0, 0, 0.24) 0%,
-				rgba(0, 0, 0, 0.08) 41.67%,
-				rgba(0, 0, 0, 0.38) 78.12%,
-				rgba(0, 0, 0, 0.81) 100%
-			);
-		}
-		p {
-			position: absolute;
-			bottom: 10px;
-			font-weight: 500;
-			font-size: 20px;
-			line-height: 24px;
-			text-align: center;
-			color: #f4f5f7;
-			width: 100%;
-			left: 0;
-		}
-	}
-`;
-
 const OnboardButton = styled.button`
 	padding: 4px 24px;
 	width: 109px;
@@ -58,6 +22,12 @@ const OnboardButton = styled.button`
 	border: 0;
 	cursor: pointer;
 	font-size: 14px;
+
+	svg {
+		height: 15px;
+		width: 15px;
+		vertical-align: middle;
+	}
 `;
 
 const BackButton = styled(OnboardButton)`
@@ -73,57 +43,36 @@ const NextButton = styled(OnboardButton)`
 	}
 `;
 
+interface CurrentOnboardingStateProps {
+	currentState: number;
+}
+const CurrentOnboardingState = ({
+	currentState,
+}: CurrentOnboardingStateProps) => {
+	switch (currentState) {
+		case 0:
+			return <CuisineOptions />;
+		default:
+			return <p>empty right now</p>;
+	}
+};
+
 export default function Onboarding() {
+	const [onboardingState, setOnboardingState] = useState<number>(0);
 	return (
 		<>
-			<SelectFavCuisines />
+			<OnboardContentWrapper>
+				<CurrentOnboardingState currentState={onboardingState} />
+			</OnboardContentWrapper>
 
 			<div style={{ textAlign: 'center' }}>
-				<BackButton>Back</BackButton>
-				<NextButton>Next</NextButton>
+				<BackButton onClick={() => setOnboardingState(onboardingState - 1)}>
+					<ChevronLeft /> Back
+				</BackButton>
+				<NextButton onClick={() => setOnboardingState(onboardingState + 1)}>
+					Next <ChevronRight />
+				</NextButton>
 			</div>
 		</>
-	);
-}
-
-function SelectFavCuisines() {
-	return (
-		<OnboardContentWrapper>
-			<h1>Select your favorite cuisines</h1>
-			<HorizontalScrollWrapper>
-				<div>
-					<img src={cuisinesImages.nigerian} alt="nigerian" />
-					<p>Nigerian</p>
-				</div>
-				<div>
-					<img src={cuisinesImages.american} alt="american" />
-					<p>American</p>
-				</div>
-				<div>
-					<img src={cuisinesImages.french} alt="french" />
-					<p>French</p>
-				</div>
-				<div>
-					<img src={cuisinesImages.asian} alt="asian" />
-					<p>Asian</p>
-				</div>
-				<div>
-					<img src={cuisinesImages.american} alt="american" />
-					<p>American</p>
-				</div>
-				<div>
-					<img src={cuisinesImages.american} alt="american" />
-					<p>American</p>
-				</div>
-				<div>
-					<img src={cuisinesImages.american} alt="american" />
-					<p>American</p>
-				</div>
-				<div>
-					<img src={cuisinesImages.american} alt="american" />
-					<p>American</p>
-				</div>
-			</HorizontalScrollWrapper>
-		</OnboardContentWrapper>
 	);
 }
