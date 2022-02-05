@@ -6,6 +6,7 @@ import ResetPassword from './pages/reset-password';
 import ForgotPassword from './pages/forgot-password';
 import SignUp from './pages/signup';
 import Dashboard from './pages/dashboard';
+import Onboarding from './pages/onboarding';
 
 function MainApp() {
 	let { path } = useRouteMatch();
@@ -19,6 +20,7 @@ function MainApp() {
 					render={() => <Redirect to={`${path}/login`} />}
 				/> */}
 				<Route component={Login} path={`${path}/login`} />
+				<Route component={Onboarding} path={`${path}/onboarding`} />
 				<Route component={SignUp} path={`${path}/signup`} />
 				<Route component={ResetPassword} path={`${path}/reset-password`} />
 				<Route component={ForgotPassword} path={`${path}/forgot-password`} />
