@@ -2,7 +2,13 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import ChevronLeft from '../assets/icons/chevron-left.svg';
 import ChevronRight from '../assets/icons/chevron-right.svg';
+
 import CuisineOptions from '../components/onboarding/CuisineOption';
+import DietOptions from '../components/onboarding/DietOption';
+import PrepareOptions from '../components/onboarding/PrepareOption';
+import SkillOptions from '../components/onboarding/SkillOption';
+import AllergyOptions from '../components/onboarding/AllergyOption';
+import OnboardingUser from '../components/onboarding/Processing';
 
 const OnboardContentWrapper = styled.section`
 	margin: 60px 0 40px;
@@ -11,6 +17,10 @@ const OnboardContentWrapper = styled.section`
 		text-align: center;
 		margin-bottom: 48px;
 		font-weight: 500;
+	}
+
+	.processing-img {
+		text-align: center;
 	}
 `;
 
@@ -52,13 +62,21 @@ const CurrentOnboardingState = ({
 	switch (currentState) {
 		case 0:
 			return <CuisineOptions />;
+		case 1:
+			return <DietOptions />;
+		case 2:
+			return <PrepareOptions />;
+		case 3:
+			return <SkillOptions />;
+		case 4:
+			return <AllergyOptions />;
 		default:
-			return <p>empty right now</p>;
+			return <OnboardingUser />;
 	}
 };
 
 export default function Onboarding() {
-	const [onboardingState, setOnboardingState] = useState<number>(0);
+	const [onboardingState, setOnboardingState] = useState<number>(1);
 	return (
 		<>
 			<OnboardContentWrapper>

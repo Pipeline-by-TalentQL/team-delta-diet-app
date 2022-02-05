@@ -1,15 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { cuisinesImages } from '../../constants/file-links';
-
-const HorizontalScrollWrapper = styled.div`
-	display: flex;
-	gap: 30px;
-	overflow-x: scroll;
-`;
+import { cuisineOptions } from '../../constants/data';
+import { HorizontalScrollWrapper } from './display-components';
 
 const CuisineOption = styled.div`
 	position: relative;
+	cursor: pointer;
 
 	&:before {
 		content: '';
@@ -37,6 +33,7 @@ const CuisineOption = styled.div`
 		color: #f4f5f7;
 		width: 100%;
 		left: 0;
+		text-transform: capitalize;
 	}
 `;
 
@@ -45,38 +42,12 @@ export default function CuisineOptions() {
 		<>
 			<h1>Select your favorite cuisines</h1>
 			<HorizontalScrollWrapper>
-				<CuisineOption>
-					<img src={cuisinesImages.nigerian} alt="nigerian" />
-					<p>Nigerian</p>
-				</CuisineOption>
-				<CuisineOption>
-					<img src={cuisinesImages.american} alt="american" />
-					<p>American</p>
-				</CuisineOption>
-				<CuisineOption>
-					<img src={cuisinesImages.french} alt="french" />
-					<p>French</p>
-				</CuisineOption>
-				<CuisineOption>
-					<img src={cuisinesImages.asian} alt="asian" />
-					<p>Asian</p>
-				</CuisineOption>
-				<CuisineOption>
-					<img src={cuisinesImages.american} alt="american" />
-					<p>American</p>
-				</CuisineOption>
-				<CuisineOption>
-					<img src={cuisinesImages.american} alt="american" />
-					<p>American</p>
-				</CuisineOption>
-				<CuisineOption>
-					<img src={cuisinesImages.american} alt="american" />
-					<p>American</p>
-				</CuisineOption>
-				<CuisineOption>
-					<img src={cuisinesImages.american} alt="american" />
-					<p>American</p>
-				</CuisineOption>
+				{cuisineOptions.map(({ title, image }) => (
+					<CuisineOption key={title}>
+						<img src={image} alt={title} />
+						<p>{title}</p>
+					</CuisineOption>
+				))}
 			</HorizontalScrollWrapper>
 		</>
 	);
