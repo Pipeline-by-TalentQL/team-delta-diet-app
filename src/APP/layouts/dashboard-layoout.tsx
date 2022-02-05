@@ -13,9 +13,14 @@ const DashboardContentWrapper = styled.div`
 	grid-template-rows: 1fr;
 `;
 
-const MainContent = styled.div`
-	background: #2196f3;
-	color: white;
+const MainContent = styled.main`
+	padding-left: 30px;
+	max-height: calc(100vh - 130px);
+	overflow-y: auto;
+	.content-wrapper {
+		width: calc(100% - 200px);
+		overflow-x: hidden;
+	}
 `;
 
 export default function DashboardLayout({ children }: PropsWithChildren<{}>) {
@@ -25,7 +30,9 @@ export default function DashboardLayout({ children }: PropsWithChildren<{}>) {
 			{isExact ? <Header /> : <Spacer size={66} />}
 			<DashboardContentWrapper>
 				<Sidebar />
-				<MainContent>{children}</MainContent>
+				<MainContent>
+					<div className="content-wrapper">{children}</div>
+				</MainContent>
 			</DashboardContentWrapper>
 		</>
 	);
