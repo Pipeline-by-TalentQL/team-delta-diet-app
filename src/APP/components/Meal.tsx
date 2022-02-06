@@ -7,6 +7,7 @@ import AvatarImg from '../assets/images/avatar.png';
 import RoundCheck from '../assets/icons/round-check.svg';
 import Like from '../assets/icons/like.svg';
 import Share from '../assets/icons/share.svg';
+import Socials from './dashboard/Socials';
 
 const MealCardWrapper = styled.div`
 	width: 255px;
@@ -15,6 +16,10 @@ const MealCardWrapper = styled.div`
 	&:hover {
 		.overlay {
 			opacity: 1;
+		}
+
+		.socials-container {
+			display: block;
 		}
 	}
 `;
@@ -32,6 +37,13 @@ const ImageContainer = styled.div`
 		right: 0;
 		opacity: 0;
 		transition: all 0.4s ease-in-out 0s;
+	}
+
+	.socials-container {
+		position: absolute;
+		display: none;
+		top: 12px;
+		right: 12px;
 	}
 `;
 
@@ -109,6 +121,9 @@ export default function MealCard() {
 			<ImageContainer className="image-container">
 				<img src={Mug} alt="mug" />
 				<div className="overlay" />
+				<div className="socials-container">
+					<Socials />
+				</div>
 			</ImageContainer>
 			<MealCardContent>
 				<article>
