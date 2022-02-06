@@ -9,7 +9,7 @@ export default function DietOptions() {
 			<HorizontalScrollWrapper>
 				{dietsOptions.map(({ title, image, description }) => (
 					<Option key={title}>
-						<img src={image} alt="nigerian" />
+						<img src={image} alt="nigerian" loading="lazy" />
 						<div>
 							<h3>{title}</h3>
 							<p>{description}</p>

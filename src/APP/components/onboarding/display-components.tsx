@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 export const HorizontalScrollWrapper = styled.div`
 	display: flex;
 	gap: 30px;
-	justify-content: center;
 	overflow-x: scroll;
 	::-webkit-scrollbar {
 		width: 0;
@@ -12,6 +11,7 @@ export const HorizontalScrollWrapper = styled.div`
 `;
 
 export const Option = styled.div`
+	min-width: 160px;
 	width: 160px;
 	height: 160px;
 	padding: 14px;

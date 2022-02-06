@@ -44,7 +44,7 @@ export default function CuisineOptions() {
 			<HorizontalScrollWrapper>
 				{cuisineOptions.map(({ title, image }) => (
 					<CuisineOption key={title}>
-						<img src={image} alt={title} />
+						<img src={image} alt={title} loading="lazy" />
 						<p>{title}</p>
 					</CuisineOption>
 				))}
