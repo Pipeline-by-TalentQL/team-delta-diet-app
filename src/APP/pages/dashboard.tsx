@@ -1,6 +1,9 @@
 import React from 'react';
-import MealsTimeLine from '../components/dashboard/MealTabs';
+
 import DashboardLayout from '../layouts/dashboard-layoout';
+
+import DashHero from '../components/dashboard/Hero';
+import MealsTimeLine from '../components/dashboard/MealTabs';
 
 export default function Dashboard() {
 	return (
@@ -18,7 +21,7 @@ export default function Dashboard() {
 				>
 					Discover Recipes
 				</h1>
-
+				<DashHero />
 				<MealsTimeLine />
 			</div>
 		</DashboardLayout>

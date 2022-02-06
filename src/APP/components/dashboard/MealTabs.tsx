@@ -38,6 +38,9 @@ const MealsTimeLine = () => (
 				{meals.map((meal) => (
 					<MealCard key={meal.mealName} {...meal} />
 				))}
+				{meals.reverse().map((meal) => (
+					<MealCard key={meal.mealName} {...meal} />
+				))}
 			</div>
 		</CustomTabPanel>
 		<CustomTabPanel>
