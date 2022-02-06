@@ -112,3 +112,39 @@ export const cuisineOptions = [
 			'https://res.cloudinary.com/sambayo/image/upload/v1644063042/french_dzar8x.png',
 	},
 ];
+
+export const meals = [
+	{
+		mealImg:
+			'https://res.cloudinary.com/sambayo/image/upload/v1644146987/mug_yegla8.png',
+		mealName: 'Chocolate cake muffins',
+		cookTime: 20,
+		likes: 20,
+		shares: 9,
+		userAvatar:
+			'https://res.cloudinary.com/sambayo/image/upload/v1643775015/avatar.png',
+		userName: 'ubu_oko',
+	},
+	{
+		mealImg:
+			'https://res.cloudinary.com/sambayo/image/upload/v1644146987/bacon_rfanoh.png',
+		mealName: 'Sliced lemon toast with yoghurt',
+		cookTime: 10,
+		likes: 20,
+		shares: 9,
+		userAvatar:
+			'https://res.cloudinary.com/sambayo/image/upload/v1643775015/avatar.png',
+		userName: 'ubu_oko',
+	},
+	{
+		mealImg:
+			'https://res.cloudinary.com/sambayo/image/upload/v1644146987/banana_lmw3bf.png',
+		mealName: 'Sliced banana with rice-crispies',
+		cookTime: 5,
+		likes: 20,
+		shares: 9,
+		userAvatar:
+			'https://res.cloudinary.com/sambayo/image/upload/v1643775015/avatar.png',
+		userName: 'njkk',
+	},
+];

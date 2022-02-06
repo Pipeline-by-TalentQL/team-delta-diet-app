@@ -17,7 +17,7 @@ const SocialIconsWrapper = styled.div`
 		width: 24px;
 		height: 24px;
 		border-radius: 100%;
-    cursor: pointer;
+		cursor: pointer;
 	}
 `;
 

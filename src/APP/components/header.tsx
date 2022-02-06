@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Alarm from '../assets/icons/alarm.svg';
 import Message from '../assets/icons/message.svg';
-import Avatar from '../assets/images/avatar.png';
 
 const NavContainer = styled.nav`
 	width: 100vw;
@@ -32,7 +31,10 @@ const HeaderIcons = () => {
 		<IconsContainer>
 			<Alarm />
 			<Message />
-			<img src={Avatar} alt="avatar" />
+			<img
+				src="https://res.cloudinary.com/sambayo/image/upload/v1643775015/avatar.png"
+				alt="avatar"
+			/>
 		</IconsContainer>
 	);
 };

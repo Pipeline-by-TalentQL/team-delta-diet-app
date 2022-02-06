@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import Mug from '../assets/images/banana.png';
-import AvatarImg from '../assets/images/avatar.png';
-
 import RoundCheck from '../assets/icons/round-check.svg';
 import Like from '../assets/icons/like.svg';
 import Share from '../assets/icons/share.svg';
@@ -56,7 +53,6 @@ const MealCardContent = styled.div`
 		padding: 12px;
 
 		h3 {
-			width: 138px;
 			font-size: 20px;
 			line-height: 24px;
 			color: #253858;
@@ -115,11 +111,29 @@ const Divider = styled.div`
 	border-radius: 1px;
 `;
 
-export default function MealCard() {
+interface MealCardProps {
+	mealImg: string;
+	mealName: string;
+	cookTime: number;
+	likes: number;
+	shares: number;
+	userAvatar: string;
+	userName: string;
+}
+
+export default function MealCard({
+	mealImg,
+	mealName,
+	cookTime,
+	likes,
+	shares,
+	userAvatar,
+	userName,
+}: MealCardProps) {
 	return (
 		<MealCardWrapper>
 			<ImageContainer className="image-container">
-				<img src={Mug} alt="mug" />
+				<img src={mealImg} alt="mug" />
 				<div className="overlay" />
 				<div className="socials-container">
 					<Socials />
@@ -127,24 +141,24 @@ export default function MealCard() {
 			</ImageContainer>
 			<MealCardContent>
 				<article>
-					<h3>Chocolate cake muffins</h3>
-					<p>Cook in 10 Minutes</p>
+					<h3>{mealName}</h3>
+					<p>Cook in {cookTime} Minutes</p>
 				</article>
 				<Divider />
 				<MealCardFooter>
 					<MealCardFooterUser>
-						<img src={AvatarImg} alt="AvatarImg" />
-						<p>ubu_oko</p>
+						<img src={userAvatar} alt="AvatarImg" />
+						<p>{userName}</p>
 						<RoundCheck />
 					</MealCardFooterUser>
 					<MealCardFooterAction>
 						<div>
 							<Like />
-							<span> 65k</span>
+							<span> {likes}k</span>
 						</div>
 						<div>
 							<Share />
-							<span> 6k</span>
+							<span> {shares}k</span>
 						</div>
 					</MealCardFooterAction>
 				</MealCardFooter>

@@ -3,7 +3,8 @@ import React, { PropsWithChildren } from 'react';
 import { css, jsx } from '@emotion/react';
 
 import Tabs, { Tab, TabList, useTabPanel } from '@atlaskit/tabs';
-import MealCard from '../Meal';
+import { meals } from '../../constants/data';
+import MealCard from '../MealCard';
 
 const customPanelStyles = css({
 	margin: `28px 0`,
@@ -34,11 +35,9 @@ const MealsTimeLine = () => (
 					flexWrap: 'wrap',
 				}}
 			>
-				<MealCard />
-				<MealCard />
-				<MealCard />
-				<MealCard />
-				<MealCard />
+				{meals.map((meal) => (
+					<MealCard key={meal.mealName} {...meal} />
+				))}
 			</div>
 		</CustomTabPanel>
 		<CustomTabPanel>
