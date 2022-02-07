@@ -6,7 +6,7 @@ export default function PrepareOptions() {
 	return (
 		<>
 			<h1>How do you prapare food?</h1>
-			<HorizontalScrollWrapper>
+			<HorizontalScrollWrapper centered>
 				{preparationOptions.map(({ title, image, description }) => (
 					<Option key={title}>
 						<img src={image} alt="nigerian" />

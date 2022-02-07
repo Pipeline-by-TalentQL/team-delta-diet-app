@@ -6,7 +6,7 @@ export default function SkillOptions() {
 	return (
 		<>
 			<h1>Describe your cooking skills</h1>
-			<HorizontalScrollWrapper>
+			<HorizontalScrollWrapper centered>
 				{skillOptions.map(({ title, image, description }) => (
 					<Option key={title}>
 						<img src={image} alt="nigerian" />

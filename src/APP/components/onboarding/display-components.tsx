@@ -1,7 +1,12 @@
 import styled from '@emotion/styled';
 
-export const HorizontalScrollWrapper = styled.div`
+interface HorizontalScrollWrapperProps {
+	centered?: boolean;
+}
+
+export const HorizontalScrollWrapper = styled.div<HorizontalScrollWrapperProps>`
 	display: flex;
+	justify-content: ${(props) => (props.centered ? 'center' : 'start')};
 	gap: 30px;
 	overflow-x: scroll;
 	::-webkit-scrollbar {
