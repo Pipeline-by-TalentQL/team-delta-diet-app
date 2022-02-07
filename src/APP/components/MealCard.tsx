@@ -23,6 +23,11 @@ const MealCardWrapper = styled.div`
 
 const ImageContainer = styled.div`
 	position: relative;
+
+	img {
+		height: 180px;
+		width: 100%;
+	}
 	.overlay {
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19));
 		position: absolute;
@@ -54,9 +59,15 @@ const MealCardContent = styled.div`
 
 		h3 {
 			font-size: 20px;
+			height: 48px;
 			line-height: 24px;
 			color: #253858;
 			margin-bottom: 1rem;
+
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
 		}
 
 		p {

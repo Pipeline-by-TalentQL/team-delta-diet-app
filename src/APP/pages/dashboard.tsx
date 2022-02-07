@@ -1,29 +1,26 @@
 import React from 'react';
+import styled from '@emotion/styled';
 
 import DashboardLayout from '../layouts/dashboard-layoout';
 
 import DashHero from '../components/dashboard/Hero';
 import MealsTimeLine from '../components/dashboard/MealTabs';
 
+const DashContentWrapper = styled.div`
+	margin-top: 48px;
+
+	.dashboard-header {
+		margin-bottom: 28px;
+	}
+`;
 export default function Dashboard() {
 	return (
 		<DashboardLayout>
-			<div
-				className="dashboard-container"
-				style={{
-					marginTop: '48px',
-				}}
-			>
-				<h1
-					style={{
-						marginBottom: '28px',
-					}}
-				>
-					Discover Recipes
-				</h1>
+			<DashContentWrapper>
+				<h1 className="dashboard-header">Discover Recipes</h1>
 				<DashHero />
 				<MealsTimeLine />
-			</div>
+			</DashContentWrapper>
 		</DashboardLayout>
 	);
 }

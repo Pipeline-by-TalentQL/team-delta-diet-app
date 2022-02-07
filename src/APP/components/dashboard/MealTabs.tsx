@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import React, { PropsWithChildren } from 'react';
+import styled from '@emotion/styled';
 import { css, jsx } from '@emotion/react';
 
 import Tabs, { Tab, TabList, useTabPanel } from '@atlaskit/tabs';
@@ -20,6 +21,12 @@ const CustomTabPanel = ({ children }: PropsWithChildren<{}>) => {
 	);
 };
 
+const MealsFlexCard = styled.div`
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+`;
+
 const MealsTimeLine = () => (
 	<Tabs id="custom-panel">
 		<TabList>
@@ -28,26 +35,27 @@ const MealsTimeLine = () => (
 			<Tab>Dinner</Tab>
 		</TabList>
 		<CustomTabPanel>
-			<div
-				style={{
-					display: 'flex',
-					gap: '2rem',
-					flexWrap: 'wrap',
-				}}
-			>
+			<MealsFlexCard>
 				{meals.map((meal) => (
 					<MealCard key={meal.mealName} {...meal} />
 				))}
 				{meals.reverse().map((meal) => (
 					<MealCard key={meal.mealName} {...meal} />
 				))}
-			</div>
+			</MealsFlexCard>
 		</CustomTabPanel>
 		<CustomTabPanel>
 			<p>two</p>
 		</CustomTabPanel>
 		<CustomTabPanel>
-			<p>three</p>
+			<MealsFlexCard>
+				{meals.map((meal) => (
+					<MealCard key={meal.mealName} {...meal} />
+				))}
+				{meals.reverse().map((meal) => (
+					<MealCard key={meal.mealName} {...meal} />
+				))}
+			</MealsFlexCard>
 		</CustomTabPanel>
 	</Tabs>
 );

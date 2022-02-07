@@ -25,9 +25,9 @@ export default function Socials() {
 	return (
 		<SocialIconsWrapper>
 			<Facebook />
-			<Twitter />
-			<Instagram />
 			<Whatsapp />
+			<Instagram />
+			<Twitter />
 		</SocialIconsWrapper>
 	);
 }
