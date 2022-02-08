@@ -14,12 +14,6 @@ function MainApp() {
 	return (
 		<>
 			<Switch>
-				{/* <Route
-					exact
-					path={`${path}`}
-					render={() => <Redirect to={`${path}/login`} />}
-				/> */}
-
 				<Route exact path={`${path}`} component={Dashboard} />
 				<Route component={Onboarding} path={`${path}/onboarding`} />
 				<Route component={Login} path={`${path}/login`} />

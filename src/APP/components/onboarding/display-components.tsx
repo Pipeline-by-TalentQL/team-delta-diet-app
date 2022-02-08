@@ -1,9 +1,13 @@
 import styled from '@emotion/styled';
 
-export const HorizontalScrollWrapper = styled.div`
+interface HorizontalScrollWrapperProps {
+	centered?: boolean;
+}
+
+export const HorizontalScrollWrapper = styled.div<HorizontalScrollWrapperProps>`
 	display: flex;
+	justify-content: ${(props) => (props.centered ? 'center' : 'start')};
 	gap: 30px;
-	justify-content: center;
 	overflow-x: scroll;
 	::-webkit-scrollbar {
 		width: 0;
@@ -11,17 +15,18 @@ export const HorizontalScrollWrapper = styled.div`
 	}
 `;
 
-export const Option = styled.div`
+interface OptionProps {
+	isSelected?: boolean;
+}
+export const Option = styled.div<OptionProps>`
+	min-width: 160px;
 	width: 160px;
 	height: 160px;
 	padding: 14px;
 	border: 1px solid #a5adba;
 	border-radius: 12px;
 	cursor: pointer;
-
-	&.selected {
-		background: #e3fcef;
-	}
+	background: ${(props) => (props.isSelected ? '#e3fcef' : 'transparent')};
 
 	display: flex;
 	flex-direction: column;

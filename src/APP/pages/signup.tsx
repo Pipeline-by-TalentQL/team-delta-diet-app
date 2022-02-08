@@ -3,7 +3,7 @@ import Form, { FormHeader } from '@atlaskit/form';
 import Button, { LoadingButton } from '@atlaskit/button';
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import GoogleIcon from '../assets/images/google-icon.svg';
 
 import Input from '../components/InputField';
@@ -56,6 +56,7 @@ const FooterDiv = () => {
 };
 
 const SignUp = () => {
+	let history = useHistory();
 	return (
 		<AuthWrapper pageTitle="signup">
 			<div className="signup">
@@ -83,6 +84,7 @@ const SignUp = () => {
 				<Form<{ email: string; password: string }>
 					onSubmit={(data) => {
 						console.log('form data', data);
+						history.push('/app/onboarding');
 						return new Promise((resolve) => setTimeout(resolve, 2000)).then(
 							() => (data.email === 'error' ? { email: 'IN_USE' } : undefined),
 						);

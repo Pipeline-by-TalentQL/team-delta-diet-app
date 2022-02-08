@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import cx from 'classnames';
 import styled from '@emotion/styled';
+import { useHistory } from 'react-router-dom';
 
 import ChevronLeft from '../assets/icons/chevron-left.svg';
 import ChevronRight from '../assets/icons/chevron-right.svg';
@@ -35,6 +37,7 @@ const OnboardButton = styled.button`
 	border: 0;
 	cursor: pointer;
 	font-size: 14px;
+	transition: all 0.5s;
 
 	svg {
 		height: 15px;
@@ -46,6 +49,11 @@ const OnboardButton = styled.button`
 const BackButton = styled(OnboardButton)`
 	background: #ebecf0;
 	margin-right: 10px;
+
+	&.can-go-back {
+		background: #ffbdad;
+		color: #de350b;
+	}
 `;
 
 const NextButton = styled(OnboardButton)`
@@ -79,21 +87,41 @@ const CurrentOnboardingState = ({
 };
 
 export default function Onboarding() {
+	const history = useHistory();
 	const [onboardingState, setOnboardingState] = useState<number>(0);
+
+	const handleBackState = () => {
+		if (onboardingState === 0) return;
+		setOnboardingState(onboardingState - 1);
+	};
+	const handleNextState = () => {
+		// mimicking processing and directing to home app after onboarding
+		if (onboardingState === 4) {
+			setTimeout(() => {
+				history.push('/app');
+			}, 2000);
+		}
+		setOnboardingState(onboardingState + 1);
+	};
 	return (
 		<DashboardLayout>
 			<OnboardContentWrapper>
 				<CurrentOnboardingState currentState={onboardingState} />
 			</OnboardContentWrapper>
 
-			<div style={{ textAlign: 'center' }}>
-				<BackButton onClick={() => setOnboardingState(onboardingState - 1)}>
-					<ChevronLeft /> Back
-				</BackButton>
-				<NextButton onClick={() => setOnboardingState(onboardingState + 1)}>
-					Next <ChevronRight />
-				</NextButton>
-			</div>
+			{onboardingState !== 5 && (
+				<div style={{ textAlign: 'center' }}>
+					<BackButton
+						className={cx({ 'can-go-back': onboardingState > 0 })}
+						onClick={handleBackState}
+					>
+						<ChevronLeft /> Back
+					</BackButton>
+					<NextButton onClick={handleNextState}>
+						Next <ChevronRight />
+					</NextButton>
+				</div>
+			)}
 		</DashboardLayout>
 	);
 }

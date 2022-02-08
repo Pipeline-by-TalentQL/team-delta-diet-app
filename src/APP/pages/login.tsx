@@ -5,7 +5,7 @@ import Button, { LoadingButton } from '@atlaskit/button';
 import { Checkbox } from '@atlaskit/checkbox';
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import AuthWrapper from '../components/AuthPageWrapper';
 import GoogleIcon from '../assets/images/google-icon.svg';
 import Spacer from '../components/Spacer';
@@ -117,6 +117,7 @@ const FooterDiv = () => {
 };
 
 const Login = () => {
+	let history = useHistory();
 	return (
 		<AuthWrapper pageTitle="login">
 			<div className="login">
@@ -144,6 +145,7 @@ const Login = () => {
 				<Form<{ email: string; password: string }>
 					onSubmit={(data) => {
 						console.log('form data', data);
+						history.push('/app');
 						return new Promise((resolve) => setTimeout(resolve, 2000)).then(
 							() => (data.email === 'error' ? { email: 'IN_USE' } : undefined),
 						);

@@ -117,6 +117,18 @@
     "@babel/runtime" "^7.0.0"
     "@emotion/core" "^10.0.9"
 
+"@atlaskit/tabs@^13.2.6":
+  version "13.2.6"
+  resolved "https://registry.yarnpkg.com/@atlaskit/tabs/-/tabs-13.2.6.tgz#ace0569fcaa06fdbf653501b236d1a4093edeb76"
+  integrity sha512-c0Y0TXW0IXNv4zcGlyGDLyPAbHUCdz389sGppRaCYUYL+8zH89rR76QcKJswFVKl07OjIfqYzm5GsQ7T9Za7kg==
+  dependencies:
+    "@atlaskit/analytics-next" "^8.2.0"
+    "@atlaskit/codemod-utils" "^3.4.0"
+    "@atlaskit/theme" "^12.1.0"
+    "@atlaskit/tokens" "^0.6.0"
+    "@babel/runtime" "^7.0.0"
+    "@emotion/core" "^10.0.9"
+
 "@atlaskit/textfield@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@atlaskit/textfield/-/textfield-5.1.2.tgz#aeab25e91d40fef3d893ea5ccbd61efe3f230bf1"
