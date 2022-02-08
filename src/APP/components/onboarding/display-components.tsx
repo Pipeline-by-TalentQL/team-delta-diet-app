@@ -15,7 +15,10 @@ export const HorizontalScrollWrapper = styled.div<HorizontalScrollWrapperProps>`
 	}
 `;
 
-export const Option = styled.div`
+interface OptionProps {
+	isSelected?: boolean;
+}
+export const Option = styled.div<OptionProps>`
 	min-width: 160px;
 	width: 160px;
 	height: 160px;
@@ -23,10 +26,7 @@ export const Option = styled.div`
 	border: 1px solid #a5adba;
 	border-radius: 12px;
 	cursor: pointer;
-
-	&.selected {
-		background: #e3fcef;
-	}
+	background: ${(props) => (props.isSelected ? '#e3fcef' : 'transparent')};
 
 	display: flex;
 	flex-direction: column;

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { cuisineOptions } from '../../constants/data';
+import RoundCheck from '../../assets/icons/round-check.svg';
 import { HorizontalScrollWrapper } from './display-components';
 
 const CuisineOption = styled.div`
@@ -37,13 +38,45 @@ const CuisineOption = styled.div`
 	}
 `;
 
+interface CuisineOptionActiveProps {
+	isSelected?: boolean;
+}
+const CuisineOptionActive = styled.div<CuisineOptionActiveProps>`
+	color: rgba(255, 255, 255);
+	position: absolute;
+	opacity: ${(props) => (props.isSelected ? '1' : '0')};
+	transition: opacity 0.5s;
+	top: 6px;
+	left: 6px;
+
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+`;
+
 export default function CuisineOptions() {
+	const [cusines, setCusines] = useState(cuisineOptions);
+	function toggleCuisineSelect(title: string, selectedState: boolean) {
+		const updateCusines = [...cusines];
+		const cusineIndex = updateCusines.findIndex(
+			(cusine) => cusine.title === title,
+		);
+		updateCusines[cusineIndex].isSelected = !selectedState;
+		setCusines(updateCusines);
+	}
 	return (
 		<>
 			<h1>Select your favorite cuisines</h1>
 			<HorizontalScrollWrapper>
-				{cuisineOptions.map(({ title, image }) => (
-					<CuisineOption key={title}>
+				{cusines.map(({ title, image, isSelected }) => (
+					<CuisineOption
+						key={title}
+						onClick={() => toggleCuisineSelect(title, isSelected)}
+					>
+						<CuisineOptionActive isSelected={isSelected}>
+							<RoundCheck />
+						</CuisineOptionActive>
 						<img src={image} alt={title} loading="lazy" />
 						<p>{title}</p>
 					</CuisineOption>
