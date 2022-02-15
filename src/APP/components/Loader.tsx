@@ -24,6 +24,17 @@ const LoaderContent = styled.span<LoaderProps>`
 	transition: width 0.2s;
 	width: ${(props) =>
 		props.loaderStateValue ? props.loaderStateValue * 100 + '%' : '0'};
+
+	animation: shimmy 2s infinite linear;
+
+	@keyframes shimmy {
+		0% {
+			transform: translate(0);
+		}
+		100% {
+			transform: translateX(100vw);
+		}
+	}
 `;
 
 export default function Loader({ loaderStateValue }: LoaderProps) {
