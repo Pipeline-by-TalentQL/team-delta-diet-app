@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
+
 import Alarm from '../assets/icons/alarm.svg';
 import Message from '../assets/icons/message.svg';
+import Loader from './Loader';
 
 const NavContainer = styled.nav`
 	width: 100vw;
@@ -41,10 +43,13 @@ const HeaderIcons = () => {
 
 export default function Header() {
 	return (
-		<NavContainer>
-			<h2>Diet ng</h2>
-			<NavSearch placeholder="Search" />
-			<HeaderIcons />
-		</NavContainer>
+		<>
+			<NavContainer>
+				<h2>Diet ng</h2>
+				<NavSearch placeholder="Search" />
+				<HeaderIcons />
+			</NavContainer>
+			<Loader loaderStateValue={0.2} />
+		</>
 	);
 }
