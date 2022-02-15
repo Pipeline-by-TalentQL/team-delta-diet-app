@@ -82,7 +82,7 @@ export const allergyOptions = [
 		title: 'milk',
 		image:
 			'https://res.cloudinary.com/sambayo/image/upload/v1644063293/milk_j3s0hm.png',
-		isSelected: true,
+		isSelected: false,
 	},
 	{
 		title: 'fish',
@@ -100,6 +100,18 @@ export const allergyOptions = [
 		title: 'peanut',
 		image:
 			'https://res.cloudinary.com/sambayo/image/upload/v1644063293/peanut_dpt06y.png',
+		isSelected: false,
+	},
+	{
+		title: 'eggs',
+		image:
+			'https://res.cloudinary.com/sambayo/image/upload/v1644850462/eggs_ocsrdf.png',
+		isSelected: false,
+	},
+	{
+		title: 'wheat',
+		image:
+			'https://res.cloudinary.com/sambayo/image/upload/v1644850462/wheat_p9f87q.png',
 		isSelected: false,
 	},
 ];
@@ -127,6 +139,24 @@ export const cuisineOptions = [
 		title: 'french',
 		image:
 			'https://res.cloudinary.com/sambayo/image/upload/v1644063042/french_dzar8x.png',
+		isSelected: false,
+	},
+	{
+		title: 'mexican',
+		image:
+			'https://res.cloudinary.com/sambayo/image/upload/v1644850462/mexican_wdj9qz.png',
+		isSelected: false,
+	},
+	{
+		title: 'english',
+		image:
+			'https://res.cloudinary.com/sambayo/image/upload/v1644850462/english_uu94mn.png',
+		isSelected: false,
+	},
+	{
+		title: 'spanish',
+		image:
+			'https://res.cloudinary.com/sambayo/image/upload/v1644850462/spanish_vnpk1e.png',
 		isSelected: false,
 	},
 ];
