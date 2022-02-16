@@ -8,14 +8,17 @@ import ForgotPassword from './pages/forgot-password';
 import SignUp from './pages/signup';
 import Dashboard from './pages/dashboard';
 import Onboarding from './pages/onboarding';
+import Timeline from './pages/timeline';
 
 function MainApp() {
 	let { path } = useRouteMatch();
 	return (
 		<>
 			<Switch>
-				<Route exact path={`${path}`} component={Dashboard} />
+				<Route exact component={Dashboard} path={`${path}`} />
 				<Route component={Onboarding} path={`${path}/onboarding`} />
+				<Route component={Timeline} path={`${path}/timeline`} />
+
 				<Route component={Login} path={`${path}/login`} />
 				<Route component={SignUp} path={`${path}/signup`} />
 				<Route component={ResetPassword} path={`${path}/reset-password`} />
