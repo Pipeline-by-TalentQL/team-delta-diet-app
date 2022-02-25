@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Avatar from '@atlaskit/avatar';
+import { useRouteMatch } from 'react-router-dom';
 import Plus from '../assets/icons/plus.svg';
 import Search from '../assets/icons/search.svg';
 
@@ -95,6 +96,8 @@ const Atag = styled.a`
 `;
 
 export default function Sidebar() {
+	let { path } = useRouteMatch();
+	console.log(path);
 	return (
 		<SidebarContainer>
 			<AvatarContainer>
