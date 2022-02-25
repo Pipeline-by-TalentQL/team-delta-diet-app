@@ -12,6 +12,22 @@ import Timeline from './pages/timeline';
 
 function MainApp() {
 	let { path } = useRouteMatch();
+
+	// async function getfakeData() {
+	// 	try {
+	// 		// let response = await fetch('/api/countries');
+	// 		let response = await fetch('/api/users');
+	// 		let user = await response.json();
+	// 		console.log(user);
+	// 	} catch (err) {
+	// 		console.log(err);
+	// 	}
+	// }
+
+	// useEffect(() => {
+	// 	getfakeData();
+	// }, []);
+
 	return (
 		<>
 			<Switch>
