@@ -12,6 +12,13 @@ export default defineConfig({
 	],
 	server: {
 		port: 7779,
+		proxy: {
+			'/api': {
+				target: 'http://localhost:3000/v1',
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api/, ''),
+			},
+		},
 	},
 	esbuild: {
 		jsx: 'transform',
